@@ -1,0 +1,119 @@
+
+SORU1:
+Insertion Sort Projesi
+Proje 1
+
+[22,27,16,2,18,6] -> Insertion Sort
+
+Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
+
+Big-O gösterimini yazınız.
+
+Time Complexity: Dizi sıralandıktan sonra 18 sayısı aşağıdaki case'lerden hangisinin kapsamına girer? Yazınız
+
+Average case: Aradığımız sayının ortada olması
+Worst case: Aradığımız sayının sonda olması
+Best case: Aradığımız sayının dizinin en başında olması.
+.
+
+
+
+[7,3,5,8,2,9,4,15,6] dizisinin Selection Sort'a göre ilk 4 adımını yazınız.
+
+
+
+-----------------------------------------------------------------------------
+
+CEVAP:
+
+
+🔹 Proje 1: Insertion Sort Detaylı Anlatım
+Dizi: [22, 27, 16, 2, 18, 6]
+
+Insertion Sort Mantığı:
+Her adımda dizinin başından itibaren giderek büyüyen bir sıralı alt liste oluştururuz. 
+Yeni elemanı bu sıralı listenin içine doğru konumuna yerleştiririz.
+
+📍 Başlangıç:
+Sıralı liste sadece ilk elemandır.
+[22] | [27, 16, 2, 18, 6]
+
+🔸 1. Adım – 27 ele alınır
+27, 22’den büyük → yerinde kalır
+➡️ [22, 27] | [16, 2, 18, 6]
+
+🔸 2. Adım – 16 ele alınır
+16, 27’den küçük → 27 bir kayar
+16, 22’den küçük → 22 de bir kayar
+→ 16 en başa konur
+➡️ [16, 22, 27] | [2, 18, 6]
+
+🔸 3. Adım – 2 ele alınır
+2, 27’den küçük → kay
+2, 22’den küçük → kay
+2, 16’dan küçük → kay
+→ 2 en başa
+➡️ [2, 16, 22, 27] | [18, 6]
+
+🔸 4. Adım – 18 ele alınır
+18, 27’den küçük → kay
+18, 22’den küçük → kay
+18, 16’dan büyük → buraya yerleştir
+➡️ [2, 16, 18, 22, 27] | [6]
+
+🔸 5. Adım – 6 ele alınır
+6, 27 → kay
+6, 22 → kay
+6, 18 → kay
+6, 16 → kay
+6, 2’den büyük → buraya yerleştir
+➡️ [2, 6, 16, 18, 22, 27] ✅
+
+
+-----------------------------------------------------------
+
+🔹 Big-O Notasyonu:
+Worst Case: O(n²) → Dizi tamamen ters sıralıysa, her eleman tüm öncekilerle karşılaştırılır.
+
+Best Case: O(n) → Dizi zaten sıralıysa, sadece karşılaştırılır, yer değiştirme yok.
+
+Average Case: O(n²)
+
+-------------------------------------------------------------------
+
+🔸 18 Sayısı Hangi Duruma Girer?
+Sıralanmış dizide:
+[2, 6, 16, 18, 22, 27] → 18 ortadadır
+➡️ Cevap: Average Case
+
+🔹 Selection Sort – İlk 4 Adım Detaylı Anlatım
+Dizi: [7, 3, 5, 8, 2, 9, 4, 15, 6]
+Mantık: Her adımda dizinin geri kalan kısmından en küçük elemanı seçip o anki sıradaki elemanla yer değiştiririz.
+
+🔸 1. Adım – En küçük eleman bulunur
+Dizi: [7, 3, 5, 8, 2, 9, 4, 15, 6]
+En küçük: 2 (4. index)
+Yer değiştir: 2 ile 0. index’teki 7
+➡️ [2, 3, 5, 8, 7, 9, 4, 15, 6]
+
+🔸 2. Adım – Kalan dizide en küçük bulunur
+Kalan: [3, 5, 8, 7, 9, 4, 15, 6]
+En küçük: 3 (1. index, zaten yerinde)
+➡️ [2, 3, 5, 8, 7, 9, 4, 15, 6]
+
+🔸 3. Adım – Kalan dizide en küçük
+Kalan: [5, 8, 7, 9, 4, 15, 6]
+En küçük: 4 (6. index)
+Yer değiştir: 4 ile 2. index’teki 5
+➡️ [2, 3, 4, 8, 7, 9, 5, 15, 6]
+
+🔸 4. Adım – Kalan dizide en küçük
+Kalan: [8, 7, 9, 5, 15, 6]
+En küçük: 5 (6. index)
+Yer değiştir: 5 ile 3. index’teki 8
+➡️ [2, 3, 4, 5, 7, 9, 8, 15, 6]
+
+İlk 4 adımda bu hale geldik:
+
+Sonuç (4 adım sonrası):
+[2, 3, 4, 5, 7, 9, 8, 15, 6]
