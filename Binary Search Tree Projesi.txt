@@ -1,0 +1,122 @@
+
+SORU3:
+
+Binary Search Tree Projesi
+Proje 3
+
+[7, 5, 1, 8, 3, 6, 0, 9, 4, 2] dizisinin Binary-Search-Tree aşamalarını yazınız.
+
+Örnek: root x'dir. root'un sağından y bulunur. Solunda z bulunur vb.
+
+
+------------------------------------------------------------------------------------
+
+CEVAP:
+
+🔹 Binary Search Tree (BST) Kuralları:
+Her düğümün solundaki elemanlar, kendisinden küçüktür.
+
+Her düğümün sağındaki elemanlar, kendisinden büyüktür.
+
+🔸 Adım Adım İnşa Edelim:
+
+1. [7]
+İlk eleman → root 7’dir.
+
+
+2. [5]
+5 < 7 → 7'nin soluna 5 yerleştirilir.
+⮕ 7’nin solunda 5 bulunur.
+
+
+3. [1]
+1 < 7 → sola git
+
+1 < 5 → sola git
+⮕ 5’in soluna 1 yerleştirilir.
+
+
+4. [8]
+8 > 7 → sağa git
+⮕ 7’nin sağına 8 yerleştirilir.
+
+
+5. [3]
+3 < 7 → sola
+
+3 < 5 → sola
+
+3 > 1 → 1’in sağına 3 yerleştirilir.
+
+
+6. [6]
+6 < 7 → sola
+
+6 > 5 → 5’in sağına 6 yerleştirilir.
+
+
+7. [0]
+0 < 7 → sola
+
+0 < 5 → sola
+
+0 < 1 → 1’in soluna 0 yerleştirilir.
+
+
+8. [9]
+9 > 7 → sağa
+
+9 > 8 → 8’in sağına 9 yerleştirilir.
+
+
+9. [4]
+4 < 7 → sola
+
+4 < 5 → sola
+
+4 > 1 → sağa
+
+4 > 3 → 3’ün sağına 4 yerleştirilir.
+
+
+10. [2]
+2 < 7 → sola
+
+2 < 5 → sola
+
+2 > 1 → sağa
+
+2 < 3 → 3’ün soluna 2 yerleştirilir.
+
+
+
+
+
+
+🌳 Ağaç Yapısı (Yazılı Görsel Temsili)
+              
+               7
+             /   \
+           5       8
+         /   \       \
+       1     6        9
+     /   \
+   0      3
+         / \
+        2   4
+
+
+
+📌 Özetli Açıklama:
+Root 7'dir.
+
+7'nin solunda 5, sağında 8 vardır.
+
+5’in solunda 1, sağında 6 vardır.
+
+1’in solunda 0, sağında 3 vardır.
+
+3’ün solunda 2, sağında 4 vardır.
+
+8’in sağında 9 vardır.
+
