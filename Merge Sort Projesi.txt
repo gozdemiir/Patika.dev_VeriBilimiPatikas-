@@ -1,0 +1,100 @@
+
+SORU2:
+
+Merge Sort
+Proje 2
+
+[16,21,11,8,12,22] -> Merge Sort
+
+Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
+Big-O gösterimini yazınız.
+
+
+--------------------------------------------------------------------------
+
+CEVAP:
+
+🔹 Merge Sort Nedir?
+Merge Sort (Birleştirme Sıralaması), "böl ve fethet" (divide and conquer) mantığıyla çalışan bir sıralama algoritmasıdır.
+
+Dizi, küçük parçalara ayrılır (her eleman tek başına kalana kadar).
+
+Sonra bu küçük diziler sıralı şekilde birleştirilir.
+
+🔸 Dizi: [16, 21, 11, 8, 12, 22]
+📍 1. Adım – Dizi ikiye bölünür
+[16, 21, 11] ve [8, 12, 22]
+
+📍 2. Adım – Alt diziler tekrar bölünür
+[16, 21, 11] → [16] & [21, 11]
+
+[21, 11] → [21] & [11]
+
+[8, 12, 22] → [8] & [12, 22]
+
+[12, 22] → [12] & [22]
+
+📍 3. Adım – Küçük diziler birleştirilir (sıralı şekilde)
+Sol taraf:
+[21] ve [11] → birleştir → [11, 21]
+
+[16] ve [11, 21] → birleştir → [11, 16, 21]
+
+Sağ taraf:
+[12] ve [22] → birleştir → [12, 22]
+
+[8] ve [12, 22] → birleştir → [8, 12, 22]
+
+📍 4. Adım – Son birleştirme
+[11, 16, 21] ve [8, 12, 22] → birleştir →
+➡️ [8, 11, 12, 16, 21, 22] ✅
+
+🔸 Tüm Aşamaları Gösterecek Şekilde Özet:
+less
+Kopyala
+Düzenle
+[16, 21, 11, 8, 12, 22]
+→ [16, 21, 11] | [8, 12, 22]
+→ [16] + [21, 11] | [8] + [12, 22]
+→ [16] + [21] + [11] | [8] + [12] + [22]
+→ [16] + [11, 21] | [8] + [12, 22]
+→ [11, 16, 21] | [8, 12, 22]
+→ [8, 11, 12, 16, 21, 22]
+
+
+--------------------------------------------------
+
+🔹 Big-O Gösterimi:
+Merge Sort’un zaman karmaşıklığı:
+Worst Case: O(n log n)
+
+Average Case: O(n log n)
+
+Best Case: O(n log n)
+→ Her durumda performansı sabit ve güvenilirdir!
+
+Ekstra Bilgi:
+Uzay karmaşıklığı (Space Complexity): O(n)
+Çünkü yeni diziler oluşturulur (in-place değildir).
+
+-------------------------------------------------------------------
+
+🔽 Merge Sort Ağaç Yapısı
+
+
+                      [16, 21, 11, 8, 12, 22]
+                       /                  \
+             [16, 21, 11]              [8, 12, 22]
+              /        \                /       \
+          [16]     [21, 11]         [8]     [12, 22]
+                      /   \                     /   \
+                   [21]  [11]              [12]   [22]
+
+                 ⬆ Merge                ⬆ Merge
+                [11, 21]               [12, 22]
+
+              ⬆ Merge                 ⬆ Merge
+           [11, 16, 21]             [8, 12, 22]
+
+                 ⬆ Final Merge
+          ➡️ [8, 11, 12, 16, 21, 22]
